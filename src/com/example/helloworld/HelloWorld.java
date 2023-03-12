@@ -24,9 +24,6 @@ public class HelloWorld {
         // Test remainder
         System.out.println("remainder(1, 2) = " + MathFunctions.remainder(1, 2));
 
-        // Test max
-        System.out.println("max(1, 2) = " + MathFunctions.max(1, 2));
-
         // Test pow
         System.out.println("pow(1, 2) = " + MathFunctions.pow(1, 2));
 

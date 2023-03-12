@@ -27,19 +27,14 @@ public class MathFunctions {
         return a % b;
     }
 
-    // Returns the remainder of two numbers
-    public static int max(int a, int b) {
-        return Math.max(a, b);
-    }
-
     // Returns the power of a number
-    public static int pow(int a, int b) {
-        return (int) Math.pow(a, b);
+    public static double pow(int a, int b) {
+        return Math.pow(a, b);
     }
 
     // Returns the square root of a number
-    public static int sqrt(int a) {
-        return (int) Math.sqrt(a);
+    public static double sqrt(int a) {
+        return Math.sqrt(a);
     }
 
     // Returns the absolute value of a number
@@ -48,7 +43,7 @@ public class MathFunctions {
     }
 
     // Returns the hypotenuse of a right triangle
-    public static int hypotenuse(int a, int b) {
-        return (int) Math.hypot(a, b);
+    public static double hypotenuse(int a, int b) {
+        return Math.hypot(a, b);
     }
 }
