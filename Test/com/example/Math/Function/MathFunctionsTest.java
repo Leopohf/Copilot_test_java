@@ -32,15 +32,19 @@ class MathFunctionsTest {
     void divide() {
         assertEquals(0, MathFunctions.divide(1, 2));
         assertEquals(0, MathFunctions.divide(-1, -2));
-        assertEquals(0, MathFunctions.divide(1, 0));
+        assertThrows( ArithmeticException.class , () -> {
+            MathFunctions.divide(1, 0);
+        }); // This is not an AI generated test
     }
 
     // Test remainder method
     @org.junit.jupiter.api.Test
     void remainder() {
         assertEquals(1, MathFunctions.remainder(1, 2));
-        assertEquals(1, MathFunctions.remainder(-1, -2));
-        assertEquals(0, MathFunctions.remainder(1, 0));
+        assertEquals(-1, MathFunctions.remainder(-1, -2));
+        assertThrows( ArithmeticException.class , () -> {
+            MathFunctions.remainder(1, 0);
+        });
     }
 
     // Test pow method
@@ -49,16 +53,16 @@ class MathFunctionsTest {
         assertEquals(1, MathFunctions.pow(1, 0));
         assertEquals(1, MathFunctions.pow(1, 1));
         assertEquals(1, MathFunctions.pow(1, 2));
-        assertEquals(0, MathFunctions.pow(0, 0));
+        assertEquals(1, MathFunctions.pow(0, 0));
         assertEquals(0, MathFunctions.pow(0, 1));
         assertEquals(0, MathFunctions.pow(0, 2));
-        assertEquals(0, MathFunctions.pow(0, -1));
-        assertEquals(0, MathFunctions.pow(0, -2));
+        assertEquals(Double.POSITIVE_INFINITY, MathFunctions.pow(0, -1));
+        assertEquals(Double.POSITIVE_INFINITY, MathFunctions.pow(0, -2));
         assertEquals(1, MathFunctions.pow(-1, 0));
         assertEquals(-1, MathFunctions.pow(-1, 1));
         assertEquals(1, MathFunctions.pow(-1, 2));
-        assertEquals(1, MathFunctions.pow(-1, -1));
-        assertEquals(-1, MathFunctions.pow(-1, -2));
+        assertEquals(-1, MathFunctions.pow(-1, -1));
+        assertEquals(1, MathFunctions.pow(-1, -2));
     }
 
     // Test sqrt method
@@ -66,7 +70,7 @@ class MathFunctionsTest {
     void sqrt() {
         assertEquals(1, MathFunctions.sqrt(1));
         assertEquals(0, MathFunctions.sqrt(0));
-        assertEquals(0, MathFunctions.sqrt(-1));
+        assertEquals(Double.NaN, MathFunctions.sqrt(-1));
     }
 
     // Test abs method
